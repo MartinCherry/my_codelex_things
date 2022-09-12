@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Random;
 
-//import static org.apache.commons.lang3.RandomUtils.nextInt;
+import static org.apache.commons.lang3.RandomUtils.nextInt;
 
 public class RandomNumberPositions {
     public static void main(String[] args) {
@@ -44,8 +44,8 @@ public class RandomNumberPositions {
         return list.toArray(new Integer[0]);
     }
 
-    private static Integer nextInt(int i, int i1) {
-        Random randomer = new Random();
-        return randomer.nextInt(i, i1);
-    }
+//    private static Integer nextInt(int i, int i1) {
+//        Random randomer = new Random();
+//        return randomer.nextInt(i, i1);
+//    }
 }
