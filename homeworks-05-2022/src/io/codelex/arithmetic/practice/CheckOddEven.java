@@ -10,15 +10,13 @@ public class CheckOddEven {
         int a = input.nextInt();
 
         if (a % 2 == 0) {
-            System.out.println("Number " + a +" is Even");
-        }
-        else {
-            System.out.println("Number " + a +" is Odd");
+            System.out.println("Number " + a + " is Even");
+        } else {
+            System.out.println("Number " + a + " is Odd");
         }
         System.out.println("bye!");
 
     }
-
 
 
 }

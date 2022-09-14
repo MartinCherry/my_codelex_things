@@ -5,24 +5,25 @@ public class Exercise_06 {
 
         int startNum = 1;
         int maxNum = 110;
-        boolean isTxt = false;
 
-        for (int i = startNum; i<=maxNum; i++) {
-            isTxt = false;
+        //Find for numbers
+        for (int i = startNum; i <= maxNum; i++) {
+            String addition = "";
             if (i % 3 == 0) {
-                System.out.print("Coza");
-                isTxt = true;
+                addition += "Coza";
             }
             if (i % 5 == 0) {
-                System.out.print("Loza");
-                isTxt = true;
+                addition += "Loza";
             }
             if (i % 7 == 0) {
-                System.out.print("Woza");
-                isTxt = true;
+                addition += "Woza";
             }
-            if (!isTxt) {
+
+            //PrintOut
+            if (addition.equals("")) {
                 System.out.print(i);
+            } else {
+                System.out.print(addition);
             }
             System.out.print(" ");
 

@@ -47,12 +47,12 @@ public class Exercise_09 {
         }
 
         //Make calculations
-        double metersPerSeconds = (distance / (((hours * 60 * 60) + (minutes * 60) + seconds)) );
+        double metersPerSeconds = (distance / (((hours * 60 * 60) + (minutes * 60) + seconds)));
         double kmPerHours = (metersPerSeconds * 3.6);
         double milesPerHour = (kmPerHours * 0.6213711922);
 
         //Output
-        System.out.println("You entered "+distance+" m. And you made it in: "+hours+":"+minutes+":"+seconds);
+        System.out.println("You entered " + distance + " m. And you made it in: " + hours + ":" + minutes + ":" + seconds);
         System.out.printf("Your m/s is %.2f.", metersPerSeconds);
         System.out.println();
         System.out.printf("Your km/h is %.2f.", kmPerHours);

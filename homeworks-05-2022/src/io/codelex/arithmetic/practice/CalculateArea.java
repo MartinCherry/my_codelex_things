@@ -52,25 +52,22 @@ public class CalculateArea {
 
     public static void calculateCircleArea() {
 
-//        BigDecimal radius = ZERO;
-
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
         System.out.print("What is the circle's radius? ");
         //todo
         double radiusInput = keyboard.nextDouble();
-
-//        BigDecimal radius = new BigDecimal(radiusInput);
-
-//        System.out.println(radius);
+        while (radiusInput < 0) {
+            System.out.println("Number can't be negative!");
+            System.out.print("Please enter correct circle's radius: ");
+            radiusInput = keyboard.nextDouble();
+        }
         // Display output
         System.out.printf("The circle's area is %.2f. ", Geometry.areaOfCircle(radiusInput));
         System.out.println();
     }
 
     public static void calculateRectangleArea() {
-//        BigDecimal length = ZERO;
-//        BigDecimal width = ZERO;
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -79,22 +76,30 @@ public class CalculateArea {
         System.out.print("Enter length? ");
         //todo
         double lengthInput = keyboard.nextDouble();
+        while (lengthInput < 0) {
+            System.out.println("Number can't be negative!");
+            System.out.print("Please enter correct length: ");
+            lengthInput = keyboard.nextDouble();
+        }
 
         // Get width
         System.out.print("Enter width? ");
         //todo
         double widthInput = keyboard.nextDouble();
 
-//        BigDecimal length = new BigDecimal(lengthInput);
-//        BigDecimal width = new BigDecimal(widthInput);
+        while (widthInput < 0) {
+            System.out.println("Number cant be negative!");
+            System.out.print("Enter correct width: ");
+            widthInput = keyboard.nextDouble();
+        }
+
+
         // Display output
         System.out.printf("The rectangle's area is %.2f.", Geometry.areaOfRectangle(lengthInput, widthInput));
         System.out.println();
     }
 
     public static void calculateTriangleArea() {
-//        BigDecimal base = ZERO;
-//        BigDecimal height = ZERO;
 
         // Get input from user
         Scanner keyboard = new Scanner(System.in);
@@ -103,15 +108,22 @@ public class CalculateArea {
         System.out.print("Enter length of the triangle's base? ");
         //todo
         double baseInput = keyboard.nextDouble();
+        while (baseInput < 0) {
+            System.out.println("Number can't be negative!");
+            System.out.print("Please enter correct length of the triangle's base: ");
+            baseInput = keyboard.nextDouble();
+        }
 
         // Get the height
         System.out.print("Enter triangle's height? ");
         //todo
         double heightInput = keyboard.nextDouble();
+        while (heightInput < 0) {
+            System.out.println("Number can't be negative!");
+            System.out.print("Please enter correct triangle's height: ");
+            heightInput = keyboard.nextDouble();
+        }
 
-
-//        BigDecimal base = new BigDecimal(baseInput);
-//        BigDecimal height = new BigDecimal(heightInput);
 
         // Display the triangle's area.
         System.out.printf("The triangle's area is %.2f.", Geometry.areaOfTriangle(baseInput, heightInput));

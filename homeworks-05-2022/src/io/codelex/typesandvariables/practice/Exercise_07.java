@@ -1,4 +1,5 @@
 package io.codelex.typesandvariables.practice;
+
 import java.util.Scanner;
 
 public class Exercise_07 {

@@ -7,8 +7,8 @@ public class MoreVariablesAndPrinting {
         int age = 35;
         int height = 74;  // inches
         int weight = 180; // lbs
-        double heightInCm = Math.round((height * 2.54)*100.0)/100.0;
-        double weightInKg = Math.round((weight * 0.453592)*100.0)/100.0;
+        double heightInCm = Math.round((height * 2.54) * 100.0) / 100.0;
+        double weightInKg = Math.round((weight * 0.453592) * 100.0) / 100.0;
         String eyes = "Blue";
         String teeth = "White";
         String hair = "Brown";

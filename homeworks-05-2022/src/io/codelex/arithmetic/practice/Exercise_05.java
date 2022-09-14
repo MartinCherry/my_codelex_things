@@ -17,8 +17,7 @@ public class Exercise_05 {
 
         if (numToGuess == userNumber) {
             System.out.println("You guessed it!  What are the odds?!?");
-        }
-        else if (userNumber < numToGuess) {
+        } else if (userNumber < numToGuess) {
             System.out.println("Sorry, you are too low.  I was thinking of " + numToGuess);
         } else {
             System.out.println("Sorry, you are too high.  I was thinking of " + numToGuess);

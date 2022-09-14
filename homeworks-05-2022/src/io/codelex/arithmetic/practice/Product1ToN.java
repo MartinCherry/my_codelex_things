@@ -6,7 +6,7 @@ public class Product1ToN {
         int b = 10;
         int sum = a;
 
-        for (int i = a; i<=b; i++) {
+        for (int i = a; i <= b; i++) {
             sum *= i;
         }
         System.out.println(sum);

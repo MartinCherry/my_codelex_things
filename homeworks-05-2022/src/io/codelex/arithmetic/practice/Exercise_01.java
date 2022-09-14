@@ -14,17 +14,9 @@ public class Exercise_01 {
         System.out.print("Enter second digit: ");
         int b = input.nextInt();
 
-
-        if (a == 15 || b == 15) {
-            check = true;
-        } else if ((a+b) == 15) {
-            check = true;
-        } else if ((a-b) == 15 || (b-a) == 15) {
+        if ((a == 15 || b == 15) || ((a + b) == 15) || ((a - b) == 15 || (b - a) == 15)) {
             check = true;
         }
-
-
         System.out.println(check);
-
     }
 }
