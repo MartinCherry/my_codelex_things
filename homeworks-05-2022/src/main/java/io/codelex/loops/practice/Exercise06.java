@@ -2,7 +2,7 @@ package io.codelex.loops.practice;
 
 import java.util.Scanner;
 
-public class Exercise_06 {
+public class Exercise06 {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -13,7 +13,7 @@ public class Exercise_06 {
 
         boolean isTxt = false;
 
-        for (int i = startNum; i<=maxNum; i++) {
+        for (int i = startNum; i <= maxNum; i++) {
             isTxt = false;
             if (i % 3 == 0) {
                 System.out.print("Fizz");
@@ -23,10 +23,6 @@ public class Exercise_06 {
                 System.out.print("Buzz");
                 isTxt = true;
             }
-//            if (i % 7 == 0) {
-//                System.out.print("Woza");
-//                isTxt = true;
-//            }
             if (!isTxt) {
                 System.out.print(i);
             }

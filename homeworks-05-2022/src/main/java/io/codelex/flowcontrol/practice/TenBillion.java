@@ -10,37 +10,22 @@ public class TenBillion {
         System.out.print("Input an integer number less than ten billion: ");
 
         long n = in.nextLong();
+        if ((n >= Long.MIN_VALUE) && (n <= Long.MAX_VALUE)) {
 
-        while (n < 1) {
-            System.out.println("Number is not positive. Please enter positive number: ");
-            n = in.nextLong();
+            while (n < 0) {
+                System.out.println("Number is not positive. Please enter positive number: ");
+                n = in.nextLong();
+            }
+            if (n >= 1000000000L) {
+                System.out.println("Number is more than billion.");
+                return;
+            }
+
+            String number = Long.toString(n);
+
+            System.out.println(number + " number has " + number.length() + " digits");
+        } else {
+            System.out.println("Number is not a Long number!");
         }
-        if (n >= 1000000000L) {
-            System.out.println("Number is more than billion.");
-            return;
-        }
-
-        String number = Long.toString(n);
-
-        System.out.println(number + " number has "+ number.length() + " digits");
-
-
-////        todo - check if Long
-//        if (?) {
-//            //todo - check if n is less than zero
-//            if (?) {
-//                n *= -1;
-//            }
-////            fixme
-//            if (?) {
-//                System.out.println("Number is greater or equals 10,000,000,000!");
-//            }
-//                System.out.println("Number of digits in the number: " + digits);
-//            }
-//        } else {
-//            System.out.println("The number is not a long");
-//        }
-
     }
-
 }

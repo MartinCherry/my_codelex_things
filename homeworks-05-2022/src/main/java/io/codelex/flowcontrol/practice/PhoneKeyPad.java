@@ -8,8 +8,8 @@ public class PhoneKeyPad {
         System.out.print("Please enter some word: ");
         String number = input.nextLine().toLowerCase();
 
-        for (int i = 0; i<number.length(); i++) {
-            String ch = number.substring(i, i+1);
+        for (int i = 0; i < number.length(); i++) {
+            String ch = number.substring(i, i + 1);
             switch (ch) {
                 case "a", "b", "c" -> System.out.print(2);
                 case "d", "e", "f" -> System.out.print(3);
@@ -24,13 +24,6 @@ public class PhoneKeyPad {
                 case "*" -> System.out.print("*");
                 default -> System.out.print(1);
             }
-
-
-
         }
-
-
-
-
     }
 }

@@ -15,21 +15,17 @@ public class NumberSquare {
             max = Integer.parseInt(input.nextLine());
         }
 
-        for (int i = min; i <= max; i++)
-        {
+        for (int i = min; i <= max; i++) {
             int n = i;
 
-            for (int a = min; a <= max; a++)
-            {
+            for (int a = min; a <= max; a++) {
                 System.out.print(n);
                 n++;
-                if (n > max)
+                if (n > max) {
                     n = min;
+                }
             }
             System.out.println();
         }
-
-
     }
-
 }

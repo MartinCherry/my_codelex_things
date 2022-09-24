@@ -6,13 +6,10 @@ public class NaturalNumbers {
         int i;
 
         System.out.print("The first 10 natural numbers are: ");
-
-
+        
 //        todo - write a program in Java to display the first 10 natural numbers
-        for (i = 1; i<=10; i++) {
-          System.out.print(i + ", ");
+        for (i = 1; i <= 10; i++) {
+            System.out.print(i + ", ");
         }
-
     }
-
 }
