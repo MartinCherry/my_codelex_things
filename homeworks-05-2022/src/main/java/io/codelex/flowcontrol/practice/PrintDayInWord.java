@@ -1,6 +1,5 @@
 package io.codelex.flowcontrol.practice;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class PrintDayInWord {

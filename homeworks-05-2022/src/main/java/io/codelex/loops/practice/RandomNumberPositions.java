@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Random;
 
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 
@@ -16,20 +15,20 @@ public class RandomNumberPositions {
         System.out.println("Which number index would you like to find?");
 
         int searchFor = scanner.nextInt();
-
-        int i;
         boolean foundIt = false;
+        int intIndex = 0;
 
-        for (i = 0; i < integers.length; i++) {
+        for (int i = 0; i < integers.length; i++) {
             //todo - search for integer - break when you have found what you searched for
             if (integers[i] == searchFor) {
                 foundIt = true;
+                intIndex = i;
                 break;
             }
         }
 
         if (foundIt) {
-            System.out.println("Found " + searchFor + " at index " + i);
+            System.out.println("Found " + searchFor + " at index " + intIndex);
         } else {
             System.out.println(searchFor + " is not in the array");
         }
@@ -44,7 +43,7 @@ public class RandomNumberPositions {
         return list.toArray(new Integer[0]);
     }
 
-//    private static Integer nextInt(int i, int i1) {
+//    private static int nextInt(int i, int i1) {
 //        Random randomer = new Random();
 //        return randomer.nextInt(i, i1);
 //    }
