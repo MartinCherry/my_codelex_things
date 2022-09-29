@@ -1,10 +1,10 @@
 package io.codelex.oop.practice.exercise2;
 
 public abstract class Person {
-    String firstName;
-    String lastName;
-    String id;
-    String age;
+    protected String firstName;
+    protected String lastName;
+    private final String id;
+    private final String age;
 
     public Person(String firstName, String lastName, String id, String age) {
         this.firstName = firstName;

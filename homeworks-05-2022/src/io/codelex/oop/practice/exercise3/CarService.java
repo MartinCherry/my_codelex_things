@@ -1,11 +1,12 @@
 package io.codelex.oop.practice.exercise3;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarService {
 
-    List<Car> cars = new ArrayList<>();
+    private final List<Car> cars = new ArrayList<>();
 
     public void addCar(Car car) {
         this.cars.add(car);

@@ -1,8 +1,8 @@
 package io.codelex.oop.practice.exercise1;
 
 public class Rectangle extends Shape {
-    double width;
-    double height;
+    private final double width;
+    private final double height;
 
     public Rectangle(int numSides, int width, int height) {
         super(numSides);

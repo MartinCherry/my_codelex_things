@@ -3,11 +3,11 @@ package io.codelex.oop.practice.exercise7and8;
 import java.util.Objects;
 
 public class Computer {
-    String processor;
-    String ram;
-    String graphicsCard;
-    String company;
-    String model;
+    protected String processor;
+    protected String ram;
+    protected String graphicsCard;
+    protected String company;
+    protected String model;
 
     public Computer(String processor, String ram, String graphicsCard, String company, String model) {
         this.processor = processor;

@@ -3,9 +3,9 @@ package io.codelex.oop.practice.exercise3;
 import java.util.Objects;
 
 public class Manufacturer {
-    String name;
-    int yearOfEstablishment;
-    String country;
+    private String name;
+    private int yearOfEstablishment;
+    private String country;
 
     public Manufacturer(String name, int yearOfEstablishment, String country) {
         this.name = name;

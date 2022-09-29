@@ -5,8 +5,8 @@ import java.time.Period;
 
 public class Employee extends Person {
 
-    String position;
-    LocalDate startedWorking;
+    private final String position;
+    private final LocalDate startedWorking;
 
     public Employee(String firstName, String lastName, String id, String age, String position, String startedWorking) {
         super(firstName, lastName, id, age);
