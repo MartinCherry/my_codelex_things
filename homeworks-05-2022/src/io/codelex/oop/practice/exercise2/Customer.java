@@ -2,8 +2,8 @@ package io.codelex.oop.practice.exercise2;
 
 public class Customer extends Person {
 
-    String customerId;
-    int purchaseCount;
+    private final String customerId;
+    private int purchaseCount;
 
     public Customer(String firstName, String lastName, String id, String age, String customerId, int purchaseCount) {
         super(firstName, lastName, id, age);

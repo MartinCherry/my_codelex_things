@@ -2,9 +2,9 @@ package io.codelex.oop.practice.exercise9and10;
 
 public class Triangle extends Shape {
 
-    int sideA;
-    int sideB;
-    int sideC;
+    private final int sideA;
+    private final int sideB;
+    private final int sideC;
 
     public Triangle(int sideA, int sideB, int sideC) {
         this.sideA = sideA;

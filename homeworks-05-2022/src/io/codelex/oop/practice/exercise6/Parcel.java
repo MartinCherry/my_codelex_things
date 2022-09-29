@@ -1,11 +1,11 @@
 package io.codelex.oop.practice.exercise6;
 
 public class Parcel implements Validable {
-    int xLenght;
-    int yLenght;
-    int zLenght;
-    float weight;
-    boolean isExpress;
+    private final int xLenght;
+    private final int yLenght;
+    private final int zLenght;
+    private final float weight;
+    private final boolean isExpress;
 
     public Parcel(int xLength, int yLength, int zLength, float weight, boolean isExpress) {
         this.xLenght = xLength;
@@ -23,10 +23,6 @@ public class Parcel implements Validable {
             return false;
         } else if (!isExpress && (this.weight < 15)) {
             return false;
-        } else if (isExpress && (this.weight < 30)) {
-            return false;
-        } else {
-            return true;
-        }
+        } else return !isExpress || (!(this.weight < 30));
     }
 }

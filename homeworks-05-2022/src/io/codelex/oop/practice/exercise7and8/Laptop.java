@@ -3,7 +3,7 @@ package io.codelex.oop.practice.exercise7and8;
 import java.util.Objects;
 
 public class Laptop extends Computer {
-    String battery;
+    private String battery;
 
 
     public Laptop(String processor, String ram, String graphicsCard, String company, String model, String battery) {

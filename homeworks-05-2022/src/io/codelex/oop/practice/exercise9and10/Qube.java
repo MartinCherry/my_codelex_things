@@ -2,7 +2,7 @@ package io.codelex.oop.practice.exercise9and10;
 
 public class Qube extends Shape3D {
 
-    int side;
+    private final int side;
 
     public Qube(int side) {
         this.side = side;

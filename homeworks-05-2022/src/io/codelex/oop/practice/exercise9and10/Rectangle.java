@@ -1,8 +1,8 @@
 package io.codelex.oop.practice.exercise9and10;
 
 public class Rectangle extends Shape {
-    int sideA;
-    int sideB;
+    private final int sideA;
+    private final int sideB;
 
     public Rectangle(int sideA, int sideB) {
         this.sideA = sideA;

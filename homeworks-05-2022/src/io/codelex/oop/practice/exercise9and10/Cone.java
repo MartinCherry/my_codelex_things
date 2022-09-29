@@ -2,8 +2,8 @@ package io.codelex.oop.practice.exercise9and10;
 
 public class Cone extends Shape3D {
 
-    int radius;
-    int height;
+    private final int radius;
+    private final int height;
 
     public Cone(int radius, int height) {
         this.radius = radius;

@@ -6,10 +6,11 @@ public enum Runner {
     INTERMEDIATE,
     ADVANCED;
 
-    public static Runner getRunnersLevel(int min) {
-        if (min > 180) {
+
+    public static Runner getRunnersLevel(int minutes) {
+        if (minutes > 320) {
             return BEGINNER;
-        } else if (min > 120 && min < 180) {
+        } else if (minutes > 180 && minutes < 320) {
             return INTERMEDIATE;
         } else {
             return ADVANCED;

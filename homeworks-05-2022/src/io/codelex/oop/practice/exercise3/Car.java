@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Car {
-    String name;
-    String model;
-    int price;
-    int yearOfManufacture;
-    List<Manufacturer> manufacturersList;
-    EngineType engineType;
+    protected String name;
+    protected int price;
+    protected int yearOfManufacture;
+    protected List<Manufacturer> manufacturersList;
+    protected EngineType engineType;
+    private final String model;
 
     public Car(String name, String model, int price, int yearOfManufacture, EngineType engineType, Manufacturer... manufacturers) {
         this.name = name;

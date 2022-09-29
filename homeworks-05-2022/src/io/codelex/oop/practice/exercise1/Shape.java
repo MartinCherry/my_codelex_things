@@ -1,7 +1,7 @@
 package io.codelex.oop.practice.exercise1;
 
 public abstract class Shape {
-    int numSides;
+    private final int numSides;
 
     public Shape(int numSides) {
         this.numSides = numSides;
