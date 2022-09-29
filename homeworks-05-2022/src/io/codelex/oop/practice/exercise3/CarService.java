@@ -1,6 +1,7 @@
 package io.codelex.oop.practice.exercise3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,10 +72,11 @@ public class CarService {
 
     public List<Car> sort(String type) {
         List<Car> result = new ArrayList<>();
+        result.addAll(cars);
         if (type.equals("Ascending")) {
-            result = cars.stream().sorted().toList();
+            result.sort(Comparator.comparing(Car::getYearOfManufacture));
         } else if (type.equals("Descending")) {
-            result = cars.stream().sorted().collect(Collectors.toList());
+            result.sort(Comparator.comparing(Car::getYearOfManufacture).reversed());
         }
 
         return result;
@@ -90,4 +92,22 @@ public class CarService {
         return (output.size() > 0) ? output : null;
     }
 
+    public List<Car> filterByManufacturerYears(String sign, int year) {
+
+        if (sign.equals("<")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() < year)).toList();
+        } else if (sign.equals(">")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() > year)).toList();
+        } else if (sign.equals("<=")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() <= year)).toList();
+        } else if (sign.equals(">=")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() >= year)).toList();
+        } else if (sign.equals("=")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() == year)).toList();
+        } else if (sign.equals("!=")) {
+            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() != year)).toList();
+        } else {
+            throw new RuntimeException("Wrong sign entered!");
+        }
+    }
 }

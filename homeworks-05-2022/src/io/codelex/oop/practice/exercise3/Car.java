@@ -21,6 +21,50 @@ public class Car {
         this.engineType = engineType;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getYearOfManufacture() {
+        return yearOfManufacture;
+    }
+
+    public void setYearOfManufacture(int yearOfManufacture) {
+        this.yearOfManufacture = yearOfManufacture;
+    }
+
+    public List<Manufacturer> getManufacturersList() {
+        return manufacturersList;
+    }
+
+    public void setManufacturersList(List<Manufacturer> manufacturersList) {
+        this.manufacturersList = manufacturersList;
+    }
+
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

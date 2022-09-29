@@ -9,6 +9,8 @@ public class Exercise3 {
         Manufacturer bmw = new Manufacturer("BMW", 1945, "Germany");
         Manufacturer skoda = new Manufacturer("Skoda", 1957, "Czech");
 
+        CarService carService = new CarService();
+
         Car car1 = new Car("Audi", "A6", 59000, 2020, EngineType.V12, audi);
         Car car2 = new Car("VolksWagen", "Polo", 23000, 2019, EngineType.V6, volksWagen, audi, porche);
         Car car3 = new Car("Peugeot", "207", 18665, 2017, EngineType.S3, peugeot);
@@ -16,7 +18,6 @@ public class Exercise3 {
         Car car5 = new Car("BMW", "315", 21665, 2019, EngineType.S3, bmw);
         Car car6 = new Car("Skoda", "Octavia", 17345, 2017, EngineType.S4, skoda, volksWagen);
 
-        CarService carService = new CarService();
         carService.addCar(car1);
         carService.addCar(car2);
         carService.addCar(car3);
@@ -32,6 +33,7 @@ public class Exercise3 {
 //
 //        System.out.println(carService.atleastThreeManufacturers());
 //        System.out.println(carService.findCar("Skoda"));
+//        System.out.println(carService.filterByManufacturerYears("<", 2022));
 
         System.out.println(carService.findManufacturers(audi));
 
