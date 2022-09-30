@@ -3,6 +3,12 @@ package io.codelex.dateandtime.practice;
 import java.time.LocalDate;
 
 public class DateTimeExercise {
+
+
+    public static void main(String[] args) {
+        System.out.println(findNextFriday13th(LocalDate.now()));
+    }
+
     public static final long DAYS_BETWEEN = 5;
 
     public static LocalDate createNewYearsEve2017() {
@@ -17,6 +23,14 @@ public class DateTimeExercise {
     }
 
     public static LocalDate findNextFriday13th(LocalDate from) {
-        throw new UnsupportedOperationException();
+        LocalDate date = from;
+
+        while (date.getDayOfMonth() != 13 || date.getDayOfWeek().getValue() != 5) {
+            date = date.plusDays(1);
+        }
+        return date;
+
+
+//        throw new UnsupportedOperationException();
     }
 }
