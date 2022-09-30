@@ -24,15 +24,12 @@ public class CarService {
     }
 
     public List<Car> getEngine(EngineType engineType) {
-        List<Car> carList = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.engineType.equals(engineType)) {
-                carList.add(car);
-            }
-        }
-
-        return carList;
+        List<Car> engineList = cars.stream()
+                .filter(car -> car.getEngineType() == engineType)
+                .toList();
+        return engineList;
     }
+
 
     public void madeBefore(int year) {
         for (Car car : cars) {

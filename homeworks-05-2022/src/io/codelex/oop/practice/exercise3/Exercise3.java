@@ -26,7 +26,7 @@ public class Exercise3 {
         carService.addCar(car6);
 
 //        System.out.println(carService.mostExpensive());
-//        System.out.println(carService.getEngine(EngineType.V12));
+        System.out.println(carService.getEngine(EngineType.V6));
 //
 //        System.out.println(carService.mostExpensive());
 //        System.out.println(carService.cheapest());
@@ -35,7 +35,7 @@ public class Exercise3 {
 //        System.out.println(carService.findCar("Skoda"));
 //        System.out.println(carService.filterByManufacturerYears("<", 2022));
 
-        System.out.println(carService.findManufacturers(audi));
+//        System.out.println(carService.findManufacturers(audi));
 
 
     }
