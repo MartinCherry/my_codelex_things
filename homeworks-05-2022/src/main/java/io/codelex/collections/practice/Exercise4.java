@@ -3,7 +3,6 @@ package io.codelex.collections.practice;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
-import java.util.StringJoiner;
 
 public class Exercise4 {
     public static void main(String[] args) {
@@ -17,7 +16,7 @@ public class Exercise4 {
             inputText = in.nextLine();
             enteredNames.add(inputText);
         }
-        
+
         System.out.println("Unique name list contains: " + String.join(" ", enteredNames));
     }
 }

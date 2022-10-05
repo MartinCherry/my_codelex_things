@@ -6,7 +6,7 @@ public class Exercise1 {
         System.out.println(Directions.WEST.getOutput());
         System.out.println(Directions.EAST.getOutput());
         System.out.println(Directions.SOUTH.getOutput());
-        
+
         for (Directions direction : Directions.values()) {
             System.out.println(direction + ":" + direction.getOutput() + ":" + direction.ordinal());
         }

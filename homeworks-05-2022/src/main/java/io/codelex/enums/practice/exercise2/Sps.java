@@ -12,12 +12,12 @@ public enum Sps {
         this.name = letter;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public static Sps getSpsByValue(int value) {
         return Sps.values()[value];
+    }
+
+    public String getName() {
+        return name;
     }
 
 

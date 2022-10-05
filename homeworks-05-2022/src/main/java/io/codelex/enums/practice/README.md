@@ -15,11 +15,11 @@ Write a program which prints out the following:
 
 There are multiple ways on how to do it:
 
- - with an if statement
- - using switch
- - having a field inside enum
- - having abstract method
- - mapping the values in EnumMap
+- with an if statement
+- using switch
+- having a field inside enum
+- having abstract method
+- mapping the values in EnumMap
 
 Print out all of the enum values and their ordinals in the following way:
 

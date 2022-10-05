@@ -1,7 +1,6 @@
 package io.codelex.collections.practice.lists;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @SuppressWarnings("Duplicates")
