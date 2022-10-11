@@ -10,8 +10,8 @@ public class Owl extends Bird {
     public boolean canFly() {
         return true;
     }
-    
-    public void lookSmart(){
+
+    public void lookSmart() {
         // look very smart
     }
 }

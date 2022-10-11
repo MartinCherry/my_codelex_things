@@ -1,5 +1,7 @@
 package io.codelex.polymorphism.practice.exercise4;
 
+import java.text.DecimalFormat;
+
 public class Staff {
     StaffMember[] staffList;
 
@@ -7,7 +9,7 @@ public class Staff {
     // Sets up the list of staff members.
     //-----------------------------------------------------------------
     public Staff() {
-        staffList = new StaffMember[6];
+        staffList = new StaffMember[8];
         staffList[0] = new Executive("Sam", "123 Main Line",
                 "555-0469", "123-45-6789", 2423.07);
         staffList[1] = new Employee("Carla", "456 Off Line",
@@ -20,8 +22,14 @@ public class Staff {
                 "555-8374");
         staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
                 "555-7282");
+        staffList[6] = new Commission("Peter", "Brivibas street 123", "123456", "666777", 7.89, 0.25);
+        staffList[7] = new Commission("John", "Gertrudes street 56", "9871246", "12233", 4.56, 0.18);
         ((Executive) staffList[0]).awardBonus(500.00);
         ((Hourly) staffList[3]).addHours(40);
+        ((Commission) staffList[6]).addHours(40);
+        ((Commission) staffList[6]).addSales(12);
+        ((Commission) staffList[7]).addHours(25);
+        ((Commission) staffList[7]).addSales(5);
     }
 
     //-----------------------------------------------------------------
@@ -35,7 +43,7 @@ public class Staff {
             if (amount == 0.0)
                 System.out.println("Thanks!");
             else
-                System.out.println("Paid: " + amount);
+                System.out.println("Paid: " + String.format("%.2f", amount));
             System.out.println("-----------------------------------");
         }
     }
