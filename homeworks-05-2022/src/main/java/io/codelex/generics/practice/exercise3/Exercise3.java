@@ -7,19 +7,34 @@ public class Exercise3 {
 
     public static void main(String[] args) {
 
-        MyClass myClassObject1 = new MyClass("My Class Object 1");
-        MyClass myClassObject2 = new MyClass("My Class Object 2");
+        MyClass<String> myClassObject1 = new MyClass<>("My Class Object 1");
+        MyClass<String> myClassObject2 = new MyClass<>("My Class Object 2");
 
-        MyChildClass myChildClassObject1 = new MyChildClass("My Child Class Object 1");
-        MyChildClass myChildClassObject2 = new MyChildClass("My Child Class Object 2");
+        MyChildClass<String> myChildClassObject1 = new MyChildClass<>("My Child Class Object 1");
+        MyChildClass<String> myChildClassObject2 = new MyChildClass<>("My Child Class Object 2");
 
-        List<MyClass> myClassList = new ArrayList<>();
+        MyClass<String> myClassObject3 = new MyClass("My Class Object 3");
+        MyChildClass<String> myChildClassObject3 = new MyChildClass<>("My Child Class Object 3");
+
+
+        List<MyClass<String>> myClassList = new ArrayList<>();
         myClassList.add(myClassObject1);
         myClassList.add(myClassObject2);
 
-        List<MyChildClass> myChildClassList = new ArrayList<>();
+        List<MyClass<String>> myClassList2 = new ArrayList<>();
+        myClassList2.add(myClassObject1);
+        myClassList2.add(myClassObject2);
+
+        List<MyChildClass<String>> myChildClassList = new ArrayList<>();
         myChildClassList.add(myChildClassObject1);
         myChildClassList.add(myChildClassObject2);
+
+        List<MyChildClass<String>> myChildClassList2 = new ArrayList<>();
+        myChildClassList2.add(myChildClassObject1);
+        myChildClassList2.add(myChildClassObject2);
+
+        addAllY(myClassList2, myClassList);
+        addAllY(myChildClassList2, myChildClassList);
 
 
         addAllX(myChildClassList, myClassList);
