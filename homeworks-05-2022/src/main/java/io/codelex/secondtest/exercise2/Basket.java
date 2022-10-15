@@ -9,7 +9,7 @@ public class Basket<T> {
     int itemsInBasket = 0;
 
     public void add(T element) {
-        if (itemsInBasket >=10) {
+        if (itemsInBasket >= 10) {
             throw new BasketFullException();
         }
         else {
@@ -18,6 +18,7 @@ public class Basket<T> {
             System.out.println("Item added. " + this.itemsInBasket + " items in basket!");
         }
     }
+
     public void remove(T element) {
         if (itemsInBasket <= 0) {
             throw new BasketEmptyException();

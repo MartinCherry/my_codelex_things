@@ -4,8 +4,6 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Comparator;
 
 public class Exercise4 {
 
@@ -22,12 +20,12 @@ public class Exercise4 {
         System.out.println(outputFile);
 
 
-            BufferedReader in = new BufferedReader(new FileReader(PATH + inputFile + EXTENSION));
-        Path path = Paths.get(PATH+outputFile+EXTENSION);
+        BufferedReader in = new BufferedReader(new FileReader(PATH + inputFile + EXTENSION));
+        Path path = Paths.get(PATH + outputFile + EXTENSION);
         Files.createFile(path);
-            BufferedWriter out = new BufferedWriter(new FileWriter(PATH + outputFile + EXTENSION));
+        BufferedWriter out = new BufferedWriter(new FileWriter(PATH + outputFile + EXTENSION));
 
-            StringBuilder documentText = new StringBuilder();
+        StringBuilder documentText = new StringBuilder();
 
         String line;
         while ((line = in.readLine()) != null) {
@@ -35,7 +33,7 @@ public class Exercise4 {
             documentText.append("\n");
         }
 
-            out.write(documentText.reverse().toString());
+        out.write(documentText.reverse().toString());
 
         in.close();
         out.close();
