@@ -1,7 +1,5 @@
 package io.codelex.secondtest.exercise1;
 
-import java.math.BigDecimal;
-
 public class CardApp {
     public static void main(String[] args) {
 
@@ -18,8 +16,6 @@ public class CardApp {
         creditCard.withdrawMoney(50);
         creditCard.withdrawMoney(100);
         creditCard.withdrawMoney(1);
-
-
 
 
     }

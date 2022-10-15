@@ -18,9 +18,10 @@ public abstract class Card {
     }
 
     public abstract void addMoney(double amount);
+
     public abstract void withdrawMoney(double amount);
 
-    public BigDecimal accountBalance(){
+    public BigDecimal accountBalance() {
         return this.amount;
     }
 

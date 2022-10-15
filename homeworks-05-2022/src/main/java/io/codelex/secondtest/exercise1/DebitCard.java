@@ -2,7 +2,7 @@ package io.codelex.secondtest.exercise1;
 
 import java.math.BigDecimal;
 
-public class DebitCard extends Card{
+public class DebitCard extends Card {
 
 
     public DebitCard(String cardNumber, String cardName, String ccv) {
