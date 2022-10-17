@@ -6,28 +6,25 @@ import java.util.List;
 public class Basket<T> {
 
     List<T> basketList = new ArrayList<>();
-    int itemsInBasket = 0;
 
     public void add(T element) {
-        if (itemsInBasket >= 10) {
+        if (basketList.size() >= 10) {
             throw new BasketFullException();
         }
         else {
             basketList.add(element);
-            itemsInBasket++;
-            System.out.println("Item added. " + this.itemsInBasket + " items in basket!");
+            System.out.println("Item added. " + this.basketList.size() + " items in basket!");
         }
     }
 
     public void remove(T element) {
-        if (itemsInBasket <= 0) {
+        if (basketList.isEmpty()) {
             throw new BasketEmptyException();
         }
         else {
             if (basketList.contains(element)) {
                 basketList.remove(element);
-                itemsInBasket--;
-                System.out.println("Item removed. " + this.itemsInBasket + " items in basket!");
+                System.out.println("Item removed. " + this.basketList.size() + " items in basket!");
             }
             else {
                 System.out.println("No item found");
