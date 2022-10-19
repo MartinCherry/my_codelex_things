@@ -55,22 +55,14 @@ public class StreamsExercise {
 
     public static List<String> getDistinctLetters(List<String> names) {
 
-        LinkedHashSet<String> returnList = new LinkedHashSet<>() {
-        };
+        return names.stream().flatMap(s -> Stream.of(s.split(""))).distinct().toList();
 
-        for (int i = 0; i < names.size(); i++) {
-            String[] tempString = names.get(i).split("");
-            Collections.addAll(returnList, tempString);
-        }
-
-        return returnList.stream().toList();
     }
 
 
     public static String separateNamesByComma(List<User> users) {
-        List<String> returnString = new ArrayList<>();
-        users.forEach(user -> returnString.add(user.getName()));
-        return String.join(", ", returnString);
+
+        return users.stream().map(User::getName).collect(Collectors.joining(", "));
     }
 
     public static double getAverageAge(List<User> users) {

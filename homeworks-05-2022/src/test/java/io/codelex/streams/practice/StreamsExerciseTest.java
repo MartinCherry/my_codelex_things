@@ -2,6 +2,7 @@ package io.codelex.streams.practice;
 
 import org.hamcrest.Matchers;
 import org.hamcrest.collection.IsIterableContainingInOrder;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
