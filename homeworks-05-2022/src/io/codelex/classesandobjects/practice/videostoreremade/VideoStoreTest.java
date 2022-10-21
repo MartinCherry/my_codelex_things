@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class VideoStoreTest {
-    private static final List<Video> MOVIES = new ArrayList<>();
+    private static final List<Video> Movies = new ArrayList<>();
     private static final Scanner KEYBOARD = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -25,29 +25,14 @@ public class VideoStoreTest {
             System.out.println("\n");
 
             switch (n) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    fillVideoStore();
-                    break;
-                case 2:
-                    rentVideo();
-                    break;
-                case 3:
-                    returnVideo();
-                    break;
-                case 4:
-                    listMovies();
-                    break;
-                case 5:
-                    rateVideo();
-                    break;
-                case 9:
-                    fillDefault();
-                    break;
-                default:
-                    wrongChoise();
-                    break;
+                case 0 -> System.exit(0);
+                case 1 -> fillVideoStore();
+                case 2 -> rentVideo();
+                case 3 -> returnVideo();
+                case 4 -> listMovies();
+                case 5 -> rateVideo();
+                case 9 -> fillDefault();
+                default -> wrongChoise();
             }
         }
     }
@@ -77,7 +62,7 @@ public class VideoStoreTest {
 
     private static void addVideo(String title, int rating) {
         Video newMovie = new Video(title, rating);
-        MOVIES.add(newMovie);
+        Movies.add(newMovie);
     }
 
     private static void rentVideo() {
@@ -87,7 +72,8 @@ public class VideoStoreTest {
         if (forRent != null) {
             forRent.rent();
             System.out.println(movieName + " is registered successfully as rented!");
-        } else {
+        }
+        else {
             System.out.println("Video can't be found.");
         }
     }
@@ -99,7 +85,8 @@ public class VideoStoreTest {
         if (forBack != null) {
             forBack.bringBack();
             System.out.println(movieName + " is registered successfully back in store!");
-        } else {
+        }
+        else {
             System.out.println("Video can't be found.");
         }
     }
@@ -112,7 +99,8 @@ public class VideoStoreTest {
             System.out.println(movieName + " is found. Please enter your rating!");
             int rating = Integer.parseInt(KEYBOARD.nextLine());
             movie.rate(rating);
-        } else {
+        }
+        else {
             System.out.println("Movie couldn't be found! Please try again");
         }
     }
@@ -122,13 +110,13 @@ public class VideoStoreTest {
     }
 
     private static void listMovies() {
-        for (Video movie : MOVIES) {
+        for (Video movie : Movies) {
             System.out.println(movie);
         }
     }
 
     private static Video findVideo(String title) {
-        for (Video movie : MOVIES) {
+        for (Video movie : Movies) {
             if (movie.getTitle().equals(title)) {
                 return movie;
             }
@@ -137,9 +125,9 @@ public class VideoStoreTest {
     }
 
     private static void fillDefault() {
-        MOVIES.add(new Video("The Matrix"));
-        MOVIES.add(new Video("Godfather II"));
-        MOVIES.add(new Video("Star Wars Episode IV: A New Hope"));
+        Movies.add(new Video("The Matrix"));
+        Movies.add(new Video("Godfather II"));
+        Movies.add(new Video("Star Wars Episode IV: A New Hope"));
         System.out.println("Movies loaded! \n");
     }
 }

@@ -9,5 +9,8 @@ public class Exercise10 {
         System.out.println(benBen);
         System.out.println(badBenBen);
         System.out.println(goodBenBen);
+
+        benBen.deposit(10);
+        System.out.println(benBen);
     }
 }
