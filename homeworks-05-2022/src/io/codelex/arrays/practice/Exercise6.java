@@ -14,7 +14,7 @@ public class Exercise6 {
 
         int[] arrayTwo = arrayOne.clone();
 
-        arrayOne[9] = -7;
+        arrayOne[arrayOne.length - 1] = -7;
 
         System.out.print("Array 1:");
         for (int num : arrayOne) {

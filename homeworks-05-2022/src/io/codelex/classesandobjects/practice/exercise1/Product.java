@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.practice.exercise1;
 
 public class Product {
-    String name;
-    double priceAtStart;
-    int amountAtStart;
+    private String name;
+    private double priceAtStart;
+    private int amountAtStart;
 
     public Product(String name, double priceAtStart, int amountAtStart) {
         this.name = name;

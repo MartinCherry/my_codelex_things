@@ -1,6 +1,8 @@
 package io.codelex.classesandobjects.practice.exercise2;
 
 public class Car {
+    private final int GAS_HOG = 15;
+    private final int ECONOMIC_CAR = 5;
     double startKilometers; // Starting odometer reading
     double endKilometers; // Ending odometer reading
     double liters; // Liters of gas used between the readings
@@ -56,10 +58,10 @@ public class Car {
     }
 
     public boolean isGasHog() {
-        return (calculateConsumption() > 15);
+        return calculateConsumption() > GAS_HOG;
     }
 
     public boolean isEconomyCar() {
-        return (calculateConsumption() < 5);
+        return calculateConsumption() < ECONOMIC_CAR;
     }
 }

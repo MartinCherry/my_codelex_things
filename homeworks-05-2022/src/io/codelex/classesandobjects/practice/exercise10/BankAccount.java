@@ -13,11 +13,11 @@ public class BankAccount {
     }
 
     public final void deposit(double amount) {
-        //todo
+        balance += amount;
     }
 
     public final void withdraw(double amount) {
-        //todo
+        balance -= amount;
     }
 
     public double getBalance() {

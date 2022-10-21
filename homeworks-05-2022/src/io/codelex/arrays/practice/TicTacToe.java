@@ -17,74 +17,67 @@ public class TicTacToe {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        boolean gameStarted = true;
-        boolean firstPlayer = true;
-
-        if (gameStarted) {
-            initBoard();
-            gameStarted = false;
-        }
+        initBoard();
         displayBoard();
         while (!gameOver) {
             String[] in = keyboard.nextLine().split(" ");
-            int X = Integer.parseInt(in[0]);
-            int Y = Integer.parseInt(in[1]);
+            int x = Integer.parseInt(in[0]);
+            int y = Integer.parseInt(in[1]);
 
-            while ((X < 0 || X > 2) || (Y < 0 || Y > 2)) {
+            while ((x < 0 || x > 2) || (y < 0 || y > 2)) {
                 System.out.println("Coordinates out of bond");
                 System.out.println("Enter correct coordinates: ");
                 System.out.println();
                 System.out.println("Now " + player + " turn");
-
                 in = keyboard.nextLine().split(" ");
-                X = Integer.parseInt(in[0]);
-                Y = Integer.parseInt(in[1]);
+                x = Integer.parseInt(in[0]);
+                y = Integer.parseInt(in[1]);
             }
 
-            while (board[X][Y] != ' ') {
+            while (board[x][y] != ' ') {
                 System.out.println("Field already taken!");
                 System.out.println("Enter correct coordinates: ");
                 System.out.println();
                 System.out.println("Now " + player + " turn");
                 in = keyboard.nextLine().split(" ");
-                X = Integer.parseInt(in[0]);
-                Y = Integer.parseInt(in[1]);
+                x = Integer.parseInt(in[0]);
+                y = Integer.parseInt(in[1]);
             }
 
-            board[X][Y] = player;
+            board[x][y] = player;
 
-
-            getWinner();
+            gameOver = getWinner();
 
             getPlayer();
             displayBoard();
-            getTie();
+            isTie = getTie();
 
         }
         if (!isTie) {
             System.out.println("Game ended. " + winner + " WON!!!");
-        } else {
+        }
+        else {
             System.out.println("Game ended. TIE");
         }
     }
 
 
-    public static void initBoard() {
-        // fills up the board with blanks
+    private static void initBoard() {
         for (int r = 0; r < 3; r++)
             for (int c = 0; c < 3; c++)
                 board[r][c] = ' ';
     }
 
-    public static void getPlayer() {
+    private static void getPlayer() {
         if (player == 'X') {
             player = 'Y';
-        } else {
+        }
+        else {
             player = 'X';
         }
     }
 
-    public static void displayBoard() {
+    private static void displayBoard() {
 
         System.out.println("  0  " + board[0][0] + "|" + board[0][1] + "|" + board[0][2]);
         System.out.println("    --+-+--");
@@ -95,43 +88,56 @@ public class TicTacToe {
         if (!gameOver) {
             System.out.println("'" + player + "' , choose your location (row, column):");
         }
-//        System.out.println("Now " + player + " turn");
-//        if (gameStarted && !gameOver) {
-//            System.out.println("Game started. Please enter something");
-//        }
     }
 
-    public static void getWinner() {
-        boolean hasWinner = false;
-        //Rows
-        if (board[0][0] != ' ' && board[0][0] == board[0][1] && board[0][1] == board[0][2]) {
-            hasWinner = true;
-        } else if (board[1][0] != ' ' && board[1][0] == board[1][1] && board[1][1] == board[1][2]) {
-            hasWinner = true;
-        } else if (board[2][0] != ' ' && board[2][0] == board[2][1] && board[2][1] == board[2][2]) {
-            hasWinner = true;
-        }
-        //Columns
-        else if (board[0][0] != ' ' && board[0][0] == board[1][0] && board[1][0] == board[2][0]) {
-            hasWinner = true;
-        } else if (board[0][1] != ' ' && board[0][1] == board[1][1] && board[1][1] == board[2][1]) {
-            hasWinner = true;
-        } else if (board[0][2] != ' ' && board[0][2] == board[1][2] && board[1][2] == board[2][2]) {
-            hasWinner = true;
-        }
-        //Diagonals
-        else if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            hasWinner = true;
-        } else if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            hasWinner = true;
-        }
-        if (hasWinner) {
-            gameOver = true;
+    private static boolean getWinner() {
+        if (checkRows()) {
             winner = player;
+            return true;
         }
+        else if (checkColumns()) {
+            winner = player;
+            return true;
+        }
+        else if (checkDiagonals()) {
+            winner = player;
+            return true;
+        }
+        return false;
     }
 
-    public static void getTie() {
+    private static boolean checkRows() {
+        if (board[0][0] != ' ' && board[0][0] == board[0][1] && board[0][1] == board[0][2]) {
+            return true;
+        }
+        else if (board[1][0] != ' ' && board[1][0] == board[1][1] && board[1][1] == board[1][2]) {
+            return true;
+        }
+        else
+            return board[2][0] != ' ' && board[2][0] == board[2][1] && board[2][1] == board[2][2];
+    }
+
+    private static boolean checkColumns() {
+        if (board[0][0] != ' ' && board[0][0] == board[1][0] && board[1][0] == board[2][0]) {
+            return true;
+        }
+        else if (board[0][1] != ' ' && board[0][1] == board[1][1] && board[1][1] == board[2][1]) {
+            return true;
+        }
+        else
+            return board[0][2] != ' ' && board[0][2] == board[1][2] && board[1][2] == board[2][2];
+    }
+
+    private static boolean checkDiagonals() {
+
+        if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+            return true;
+        }
+        else
+            return board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0];
+    }
+
+    public static boolean getTie() {
         int freeFields = 9;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -140,10 +146,7 @@ public class TicTacToe {
                 }
             }
         }
-//        System.out.println(freeFields);
-        if (freeFields == 0) {
-            isTie = true;
-        }
+        return freeFields == 0;
     }
 
 
