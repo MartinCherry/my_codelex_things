@@ -20,13 +20,16 @@ public class Exercise2 {
 
         LocalDate tempDate = serverStartDay;
 
-        while (!tempDate.minusMonths(1).isAfter(LocalDate.of(yearForTest, monthForTest, 1))) {
-            if ((tempDate.getMonth().equals(LocalDate.of(yearForTest, monthForTest, 1).getMonth())) && (tempDate.getYear() == (LocalDate.of(yearForTest, monthForTest, 1).getYear()))) {
+        while (!tempDate.minusMonths(1).isAfter(createDate(yearForTest, monthForTest))) {
+            if ((tempDate.getMonth().equals(createDate(yearForTest, monthForTest).getMonth())) &&
+                    (tempDate.getYear() == (createDate(yearForTest, monthForTest).getYear()))) {
                 System.out.println(tempDate);
             }
             tempDate = tempDate.plusDays(14);
         }
+    }
 
-
+    private static LocalDate createDate(int year, int month) {
+        return LocalDate.of(year, month, 1);
     }
 }

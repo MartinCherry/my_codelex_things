@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class DatePeriod {
-    LocalDate periodStart;
-    LocalDate periodEnd;
+    private final LocalDate periodStart;
+    private final LocalDate periodEnd;
 
     public DatePeriod(LocalDate periodStart, LocalDate periodEnd) {
         this.periodStart = periodStart;
@@ -18,11 +18,13 @@ public class DatePeriod {
         if (period.periodStart.isAfter(this.periodStart) && period.periodEnd.isBefore(this.periodEnd)) {
             tempStart = period.periodStart;
             tempEnd = period.periodEnd;
-        } else if (this.periodStart.isAfter(period.periodStart) && this.periodEnd.isBefore(period.periodEnd)) {
+        }
+        else if (this.periodStart.isAfter(period.periodStart) && this.periodEnd.isBefore(period.periodEnd)) {
             tempStart = this.periodStart;
             tempEnd = this.periodEnd;
 
-        } else if (this.periodStart.isBefore(period.periodStart)) {
+        }
+        else if (this.periodStart.isBefore(period.periodStart)) {
 
             if (this.periodEnd.isAfter((period.periodStart))) {
                 tempEnd = this.periodEnd;
@@ -30,7 +32,8 @@ public class DatePeriod {
             if (period.periodStart.isBefore(this.periodEnd)) {
                 tempStart = period.periodStart;
             }
-        } else {
+        }
+        else {
             if (this.periodStart.isBefore(period.periodEnd)) {
                 tempStart = this.periodStart;
             }
@@ -41,11 +44,11 @@ public class DatePeriod {
 
         if (tempStart != null && tempEnd != null) {
             return new DatePeriod(tempStart, tempEnd);
-        } else {
+        }
+        else {
             return null;
         }
     }
-
 
     @Override
     public String toString() {

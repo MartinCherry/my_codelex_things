@@ -3,11 +3,11 @@ package io.codelex.oop.practice.exercise7and8;
 import java.util.Objects;
 
 public class Computer {
-    protected String processor;
-    protected String ram;
-    protected String graphicsCard;
-    protected String company;
-    protected String model;
+    private String processor;
+    private String ram;
+    private String graphicsCard;
+    private String company;
+    private String model;
 
     public Computer(String processor, String ram, String graphicsCard, String company, String model) {
         this.processor = processor;
@@ -59,20 +59,21 @@ public class Computer {
 
     @Override
     public String toString() {
-        return "Computer{" +
-                "processor='" + processor + '\'' +
-                ", ram='" + ram + '\'' +
-                ", graphicsCard='" + graphicsCard + '\'' +
-                ", company='" + company + '\'' +
-                ", model='" + model + '\'' +
-                '}';
+        return "Computer{" + "processor='" + processor + '\'' + ", ram='" + ram + '\'' + ", graphicsCard='" +
+                graphicsCard + '\'' + ", company='" + company + '\'' + ", model='" + model + '\'' + '}';
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Computer computer)) return false;
-        return Objects.equals(getProcessor(), computer.getProcessor()) && Objects.equals(getRam(), computer.getRam()) && Objects.equals(getGraphicsCard(), computer.getGraphicsCard()) && Objects.equals(getCompany(), computer.getCompany()) && Objects.equals(getModel(), computer.getModel());
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Computer computer)) {
+            return false;
+        }
+        return Objects.equals(getProcessor(), computer.getProcessor()) && Objects.equals(getRam(), computer.getRam()) &&
+                Objects.equals(getGraphicsCard(), computer.getGraphicsCard()) &&
+                Objects.equals(getCompany(), computer.getCompany()) && Objects.equals(getModel(), computer.getModel());
     }
 
     @Override

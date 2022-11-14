@@ -22,22 +22,16 @@ public class Exercise1 {
 
         while (!endDate.equals(tempDate)) {
 
-            // Official hollidays
-            LocalDate hollyday4ofMay = LocalDate.of(tempDate.getYear(), 5, 4);
-            LocalDate hollyDay18ofNovember = LocalDate.of(tempDate.getYear(), 11, 18);
-            LocalDate hollidayMidsommerFestival1 = LocalDate.of(tempDate.getYear(), 6, 23);
-            LocalDate hollidayMidsommerFestival2 = LocalDate.of(tempDate.getYear(), 6, 24);
-            LocalDate hollidayChristmas1 = LocalDate.of(tempDate.getYear(), 12, 24);
-            LocalDate hollidayChristmas2 = LocalDate.of(tempDate.getYear(), 12, 25);
-            LocalDate hollidayChristmas3 = LocalDate.of(tempDate.getYear(), 12, 26);
 
             if ((tempDate.getDayOfWeek() != DayOfWeek.SATURDAY) && (tempDate.getDayOfWeek() != DayOfWeek.SUNDAY)) {
-                if ((!tempDate.equals(hollyday4ofMay)) && (!tempDate.equals(hollyDay18ofNovember)) && (!tempDate.equals(hollidayMidsommerFestival1)) && (!tempDate.equals(hollidayMidsommerFestival2)) && (!tempDate.equals(hollidayChristmas1)) && (!tempDate.equals(hollidayChristmas2)) && (!tempDate.equals(hollidayChristmas3))) {
+                if (checkIfNotHoliday(tempDate)) {
                     hours += 8;
-                } else {
+                }
+                else {
                     holiday++;
                 }
-            } else {
+            }
+            else {
                 weekend++;
             }
 
@@ -47,6 +41,40 @@ public class Exercise1 {
         System.out.println("Holidays " + holiday);
 
         return hours;
+    }
+
+    private static boolean checkIfNotHoliday(LocalDate tempDate) {
+
+        // Official holidays
+        LocalDate holiday4ofMay = LocalDate.of(tempDate.getYear(), 5, 4);
+        LocalDate holyDay18ofNovember = LocalDate.of(tempDate.getYear(), 11, 18);
+        LocalDate holidayMidsummerFestival1 = LocalDate.of(tempDate.getYear(), 6, 23);
+        LocalDate holidayMidsummerFestival2 = LocalDate.of(tempDate.getYear(), 6, 24);
+        LocalDate holidayChristmas1 = LocalDate.of(tempDate.getYear(), 12, 24);
+        LocalDate holidayChristmas2 = LocalDate.of(tempDate.getYear(), 12, 25);
+        LocalDate holidayChristmas3 = LocalDate.of(tempDate.getYear(), 12, 26);
+
+        if (tempDate.equals(holiday4ofMay)) {
+            return false;
+        }
+        else if (tempDate.equals(holyDay18ofNovember)) {
+            return false;
+        }
+        else if (tempDate.equals(holidayMidsummerFestival1)) {
+            return false;
+        }
+        else if (tempDate.equals(holidayMidsummerFestival2)) {
+            return false;
+        }
+        else if (tempDate.equals(holidayChristmas1)) {
+            return false;
+        }
+        else if (tempDate.equals(holidayChristmas2)) {
+            return false;
+        }
+        else {
+            return !tempDate.equals(holidayChristmas3);
+        }
     }
 
 }
