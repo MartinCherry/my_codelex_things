@@ -12,7 +12,8 @@ public class Car {
     protected EngineType engineType;
     private final String model;
 
-    public Car(String name, String model, int price, int yearOfManufacture, EngineType engineType, Manufacturer... manufacturers) {
+    public Car(String name, String model, int price, int yearOfManufacture, EngineType engineType,
+               Manufacturer... manufacturers) {
         this.name = name;
         this.model = model;
         this.price = price;
@@ -67,9 +68,21 @@ public class Car {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Car car)) return false;
-        return yearOfManufacture == car.yearOfManufacture && Objects.equals(name, car.name) && Objects.equals(model, car.model) && Objects.equals(price, car.price) && Objects.equals(manufacturersList, car.manufacturersList) && engineType == car.engineType;
+        if (this ==
+                o) {
+            return true;
+        }
+        if (!(o instanceof Car car)) {
+            return false;
+        }
+        return yearOfManufacture ==
+                car.yearOfManufacture &&
+                Objects.equals(name, car.name) &&
+                Objects.equals(model, car.model) &&
+                Objects.equals(price, car.price) &&
+                Objects.equals(manufacturersList, car.manufacturersList) &&
+                engineType ==
+                        car.engineType;
     }
 
     @Override
@@ -79,6 +92,17 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Name:" + name + " Model:" + model + " Price:" + price + "EUR. Year of Manufactured:" + yearOfManufacture + ". All Manufacturers:" + manufacturersList + ". Engine Type:" + engineType;
+        return "Name:" +
+                name +
+                " Model:" +
+                model +
+                " Price:" +
+                price +
+                "EUR. Year of Manufactured:" +
+                yearOfManufacture +
+                ". All Manufacturers:" +
+                manufacturersList +
+                ". Engine Type:" +
+                engineType;
     }
 }

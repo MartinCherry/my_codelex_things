@@ -24,9 +24,7 @@ public class CarService {
     }
 
     public List<Car> getEngine(EngineType engineType) {
-        List<Car> engineList = cars.stream()
-                .filter(car -> car.getEngineType() == engineType)
-                .toList();
+        List<Car> engineList = cars.stream().filter(car -> car.getEngineType() == engineType).toList();
         return engineList;
     }
 
@@ -63,8 +61,8 @@ public class CarService {
         return cars.get(index);
     }
 
-    public List<Car> atleastThreeManufacturers() {
-        return cars.stream().filter(car -> car.manufacturersList.size() >= 3).toList();
+    public List<Car> manufacturersCount(int count) {
+        return cars.stream().filter(car -> car.manufacturersList.size() >= count).toList();
     }
 
     public List<Car> sort(String type) {
@@ -72,7 +70,8 @@ public class CarService {
         result.addAll(cars);
         if (type.equals("Ascending")) {
             result.sort(Comparator.comparing(Car::getYearOfManufacture));
-        } else if (type.equals("Descending")) {
+        }
+        else if (type.equals("Descending")) {
             result.sort(Comparator.comparing(Car::getYearOfManufacture).reversed());
         }
 
@@ -92,18 +91,48 @@ public class CarService {
     public List<Car> filterByManufacturerYears(String sign, int year) {
 
         if (sign.equals("<")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() < year)).toList();
-        } else if (sign.equals(">")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() > year)).toList();
-        } else if (sign.equals("<=")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() <= year)).toList();
-        } else if (sign.equals(">=")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() >= year)).toList();
-        } else if (sign.equals("=")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() == year)).toList();
-        } else if (sign.equals("!=")) {
-            return cars.stream().filter(car -> car.getManufacturersList().stream().anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() != year)).toList();
-        } else {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() < year))
+                    .toList();
+        }
+        else if (sign.equals(">")) {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() > year))
+                    .toList();
+        }
+        else if (sign.equals("<=")) {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() <= year))
+                    .toList();
+        }
+        else if (sign.equals(">=")) {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() >= year))
+                    .toList();
+        }
+        else if (sign.equals("=")) {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() == year))
+                    .toList();
+        }
+        else if (sign.equals("!=")) {
+            return cars.stream()
+                    .filter(car -> car.getManufacturersList()
+                            .stream()
+                            .anyMatch(manufacturer -> manufacturer.getYearOfEstablishment() != year))
+                    .toList();
+        }
+        else {
             throw new RuntimeException("Wrong sign entered!");
         }
     }

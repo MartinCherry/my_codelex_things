@@ -5,11 +5,11 @@ import java.time.LocalDate;
 public class DateTimeExercise {
 
 
+    public static final long DAYS_BETWEEN = 5;
+
     public static void main(String[] args) {
         System.out.println(findNextFriday13th(LocalDate.now()));
     }
-
-    public static final long DAYS_BETWEEN = 5;
 
     public static LocalDate createNewYearsEve2017() {
         return LocalDate.of(2017, 12, 31);
@@ -31,6 +31,6 @@ public class DateTimeExercise {
         return date;
 
 
-//        throw new UnsupportedOperationException();
+        //        throw new UnsupportedOperationException();
     }
 }

@@ -22,9 +22,15 @@ public class Laptop extends Computer {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Laptop laptop)) return false;
-        if (!super.equals(o)) return false;
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Laptop laptop)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
         return Objects.equals(getBattery(), laptop.getBattery());
     }
 
@@ -35,13 +41,8 @@ public class Laptop extends Computer {
 
     @Override
     public String toString() {
-        return "Laptop{" +
-                ", processor='" + processor + '\'' +
-                ", ram='" + ram + '\'' +
-                ", graphicsCard='" + graphicsCard + '\'' +
-                ", company='" + company + '\'' +
-                ", model='" + model + '\'' +
-                "battery='" + battery + '\'' +
-                '}';
+        return "Laptop{" + ", processor='" + this.getProcessor() + '\'' + ", ram='" + this.getRam() + '\'' +
+                ", graphicsCard='" + this.getGraphicsCard() + '\'' + ", company='" + this.getCompany() + '\'' +
+                ", model='" + this.getModel() + '\'' + "battery='" + this.battery + '\'' + '}';
     }
 }
